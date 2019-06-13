@@ -1,4 +1,4 @@
-# My Medication Control
+# My Medication Stock Control
 
 in command line tool type it:
 	
