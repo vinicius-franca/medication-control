@@ -1,0 +1,1 @@
+angular.module("MedicationControl", ['ngAnimate', 'ngRoute']);

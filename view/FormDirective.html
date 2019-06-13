@@ -1,0 +1,13 @@
+<form name="newMedicationForm">
+    <div class="form-group" ng-repeat="item in fields track by $index">
+        <label>{{ item.label }}</label>
+        <input ng-if="item.type === 'text'" type="text" class="form-control" ng-model="item.data" ng-required="item.required"> 
+        <select ng-if="item.type === 'select'" class="form-control" ng-model="item.data" ng-options="option.label for option in item.options track by option.label" ng-required="item.required">
+            <option value="">-- Selecione uma opção --</option>
+        </select> 
+        <input ng-if="item.type === 'number'" type="number" min="0" max="9999" class="form-control" ng-model="item.data" ng-required="item.required">
+        <textarea ng-if="item.type === 'textarea'"  class="form-control" ng-model="item.data" ng-required="item.required"></textarea>
+    </div>    
+    <button class="btn btn-primary btn-block" ng-if="edit" ng-click="updateMedication(fields)" ng-disabled="newMedicationForm.$invalid">Salvar</button>
+    <button class="btn btn-primary btn-block" ng-if="!edit" ng-click="addMedication(fields)" ng-disabled="newMedicationForm.$invalid">Adicionar</button>
+</form>
