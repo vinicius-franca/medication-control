@@ -6,7 +6,8 @@ angular.module("MedicationControl")
         replace:true,
         controller:'MedicationControlController',
         scope:{
-            items: "="
+            items: "=",
+            isSelected: "="
         },
         bindController: true,        
         link: function(scope, element, attrs, ctrl){

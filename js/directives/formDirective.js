@@ -7,7 +7,6 @@ angular.module("MedicationControl")
         controller:'MedicationControlController',
         scope:{
             fields: "="
-        },
-        bindController: true
+        }
     }
 });

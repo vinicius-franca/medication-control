@@ -31,7 +31,15 @@ angular.module("MedicationControl").controller("MedicationControlController", fu
                 quantity: 49
             },
         ];
-    }  
+    }
+    $scope.onSelect = function(index, isSelected){
+        if (isSelected){
+            $scope.selected = index;
+        }
+        else{
+            $scope.selected = null;
+        }
+    }
     $scope.addMedication = function(item){
         let obj = {};
         item.map((str) => {
@@ -53,6 +61,7 @@ angular.module("MedicationControl").controller("MedicationControlController", fu
         localStorage.model = JSON.stringify($scope.listItems);
         $location.path("/medications");
     };
+    
     var init = function(){
         if($routeParams.id){
             $scope.edit = true;
